@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IsBetween</title>
+  </head>
+
+  <script>
+
+      function isBetween() {
+
+        var num = document.getElementById('num').value;
+
+        if (num >= 18 && num <= 24) {
+            alert("Within boundaries")
+        } else if (num == -1) {
+            alert("Please choose a number other than default")  
+        } else {
+            alert("outside of boundaries")
+        }
+      }
+      
+  </script>
+
+  <body>
+    <form>
+        <label>Choose a number between 18 and 24</label>
+        <input id="num" type="text" value="-1">
+        <input type="submit" value="Submit" onclick="isBetween()" />
+    </form>
+  </body>
+</html>

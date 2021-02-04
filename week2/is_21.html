@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Are You 21?</title>
+  </head>
+
+  <script>
+
+      function checkDate() {
+        
+        var userdate = document.getElementById('userdate').value;
+
+      
+
+        bday = Math.floor(Date.parse(userdate) / (1000));
+        today = Math.floor(Date.now() / (1000));
+
+        //parsed_date = Date.parse(userdate);
+        alert(today - bday);
+
+        if ((today - bday) == 7671) {
+          alert("HAPPY 21st BIRTHDAY")
+        }
+        
+
+
+
+      }
+
+  </script>
+
+  <body>
+    <form>
+        <input id="userdate" type="date">
+        <input type="submit" value="Submit" onclick="checkDate()" />
+    </form>
+  </body>
+</html>
