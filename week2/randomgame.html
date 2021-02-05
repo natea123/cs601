@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Number Game</title>
+    <script>
+
+        // Generates num on page load and then loops through 3 guesses prompting user for new guess each time
+        function playGame(guess) {
+            var num = Math.floor(Math.random() * (65 - 1) + 1);
+            let count = 0;
+            while(count < 3) {
+                var guess = prompt("Please guess between 1 and 65");
+                if (guess == num) {
+                alert("YOU GUESSED CORRECTLY");
+                break;
+                }
+                count++;
+            }
+            
+
+            }
+        
+        
+
+
+    </script>
+  </head>
+  <body onload="playGame()">
+    <h1>Please refresh the page to play again</h1>
+  </body>
+</html>
