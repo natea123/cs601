@@ -8,32 +8,35 @@
 
   <script>
 
-      function checkDate() {
-        
-        var userdate = document.getElementById('userdate').value;
+    function checkDate() {
 
-      
+      // get user's bday then parse into array to access year/month/day for comparisons
+      var userdate = document.getElementById('userdate').value;
+      var parsed = userdate.split("-");
+      var today = new Date();
 
-        bday = Math.floor(Date.parse(userdate) / (1000));
-        today = Math.floor(Date.now() / (1000));
+      alert(typeof(userdate));
+    
+      // nested if's to check 1 year away, exact match, in a few days, then in a few months
+      if ((today.getFullYear() - parsed[0]) > 21) {
+        alert("Over 21");
+      } else if ((today.getFullYear() - parsed[0]) == 20) {
+          alert("Your 21st birthday is next year");
+      } else if (((today.getFullYear() - parsed[0]) == 21) && (parsed[1] == (today.getMonth() + 1)) && (today.getDate() == parsed[2])) {
+          alert("HAPPY 21st BIRTHDAY");
+      } else if (((today.getFullYear() - parsed[0]) == 21) && (parsed[1] == (today.getMonth() + 1)) && (today.getDate() - parsed[2] <= 5)) {
+          alert("21st birthday is within 5 days");
+      } else if (((today.getFullYear() - parsed[0]) == 21) && ((parsed[1] - today.getMonth() - 1) <= 2)) {
+          alert("21st birthday is in a couple months");
+      } 
 
-        //parsed_date = Date.parse(userdate);
-        alert(today - bday);
-
-        if ((today - bday) == 7671) {
-          alert("HAPPY 21st BIRTHDAY")
-        }
-        
-
-
-
-      }
+    }
 
   </script>
 
   <body>
     <form>
-        <input id="userdate" type="date">
+        <input id="userdate" type="date" required="required">
         <input type="submit" value="Submit" onclick="checkDate()" />
     </form>
   </body>
