@@ -1,0 +1,24 @@
+<!-- 
+Using javascript and when the DOM is ready or loaded, do this:
+[the current 4-digit year goes here] © [Student last name goes here].   All rights reserved.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Copyright</title>
+  </head>
+  <body>
+    <h1 id="copyright"></h1>
+  </body>
+  <script>
+    var today = new Date();
+    var year = today.getFullYear();
+
+
+    window.addEventListener("DOMContentLoaded", event => {
+        document.getElementById("copyright").innerHTML = `${year} © Andrews.   All rights reserved.`;
+    });
+  </script>
+</html>
