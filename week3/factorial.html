@@ -1,0 +1,43 @@
+<!-- 
+Create a function that finds the factorial of a number.
+The number will be captured from a textfield.
+Have the following validations on the textfield
+Make sure the value is number. Not a character or meta-character
+Make sure the value is not a string or undefined
+Create an HTML page that texts your function and the textfield validations
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Factorial</title>
+  </head>
+  <body>
+    <h1></h1>
+    <form onsubmit="factorial()">
+      <label>Please enter a number to find it's factorial: </label>
+      <input id="userinput" type="text" required="required">
+      <input type="submit" value="Submit" />
+  </form>
+  </body>
+  <script>
+    function factorial() {
+      var num = document.getElementById('userinput').value;
+      if (isNaN(Number(num))) {
+        alert("Please enter a valid number");
+        return;
+      }
+      if ((num == 0) || (num == 1)) {
+        alert(1);
+        return;
+      }
+      let x = num - 1;
+      while (x > 1) {
+        num *= x;
+        x--;
+      }
+      alert(num);  
+    }            
+  </script>
+</html>
