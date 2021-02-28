@@ -1,0 +1,22 @@
+<!-- 
+Have an HTML page that makes any span that is adjacent to any
+other span have a red 1px solid border.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adjacent</title>
+  </head>
+  <style>
+      span + span {
+          border: 1px red;
+          border-style: solid;
+      }
+  </style>
+  <body>
+    <span>This is a span</span>
+    <span>This is an adjacent span</span>
+  </body>
+</html>

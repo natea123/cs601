@@ -1,0 +1,22 @@
+<!-- 
+Use CSS to show images with borders and without them. When
+using images with a border have it rendering with a 2px dotted
+darkred border
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Images</title>
+  </head>
+  <style>
+      .darkred-border {
+          border: 2px solid darkred;
+      }
+  </style>
+  <body>
+    <img src="balloons.jpg" alt="Hot air balloons">
+    <img class="darkred-border" src="balloons.jpg" alt="Hot air balloons">
+  </body>
+</html>

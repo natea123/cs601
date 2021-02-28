@@ -1,0 +1,31 @@
+<!--
+Create 5 divs that are 20% width of the window. All of them should
+look like vertical bars (not horizontal or lines).
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vertical Divs</title>
+  </head>
+  <style>
+      .vertical {
+          height: 500px;
+          border-style: dotted;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+      }
+  </style>
+  <body>
+    <div class="grid-container">
+        <div class="vertical"></div>
+        <div class="vertical"></div>
+        <div class="vertical"></div>
+        <div class="vertical"></div>
+        <div class="vertical"></div>
+    </div>
+  </body>
+</html>
