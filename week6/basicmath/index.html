@@ -1,0 +1,93 @@
+<!--
+Using the code I have provided, complete the following:
+
+0. First off, get all the operations shown by the images/icons in the baseline solution to work, using static expressions; like 10 -1 = answer, and 20 / 4 = answer, etc...  Look at the example I have for addition as a guide for you.
+1. Use modules with all your javascript code.   You can use 1 external .js file to import your modules.
+2. Complete all operations shown with all the icons in the baseline example.
+3. You should not have any embedded javascript code in your solution.   If you do, you will lose 15 points off your grade.
+
+BONUS / Stretch Goals:
+
+a. Using a random number generator function to use with your operators that spans the values of 0 to 50 for each operand.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/basicmath.css"/>
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap" rel="stylesheet">
+
+    <title>Basic Math</title>
+  </head>
+  <body>
+    <header>
+        <h1>Please choose</h1>
+        <div>
+            <img id="addBtn" class="action" src="./images/addition_512.png"/>
+            <img id="subBtn" class="action" src="./images/subtractiob.jpg"/>
+            <img id="divBtn" class="action" src="./images/division_512.png"/>
+            <img id="multBtn" class="action" src="./images/multiply.png"/>
+            <img id="modBtn" class="action" src="./images/modulus-512.png"/>
+        </div>
+    </header>
+    <main>
+        <section class="tile" id="addition_section" style="display:none">
+            <h1 class="lg">10 + 30 =
+                <!-- See http://www.menucool.com/tooltip/css-tooltip -->
+                <div id="addition_tile" answer="40" style="border-bottom: 0" class="btn btn-primary tooltip">?
+                    <div class="top">
+                        <h3 id="addTileAnswer">Click to see the answer!</h3><i></i>
+                    </div>
+                </div>
+            </h1>
+        </section>
+        <section class="tile" id="subtraction_section" title="Subtraction" style="display:none">
+            <h1 class="lg">10 - 1 = 
+                <!-- See http://www.menucool.com/tooltip/css-tooltip -->
+                <div id="subtraction_tile" answer="9" style="border-bottom: 0" class="btn btn-primary tooltip">?
+                    <div class="top">
+                        <h3 id="subTileAnswer">Click to see the answer!</h3><i></i>
+                    </div>
+                </div>
+            </h1>
+        </section>
+        <section class="tile" title="Multiplication" id="multiplication_section" style="display:none">
+            <h1 class="lg">8 * 8 =
+                <!-- See http://www.menucool.com/tooltip/css-tooltip -->
+                <div id="multiplication_tile" answer="64" style="border-bottom: 0" class="btn btn-primary tooltip">?
+                    <div class="top">
+                        <h3 id="multTileAnswer">Click to see the answer!</h3><i></i>
+                    </div>
+                </div>
+            </h1>
+        </section>
+        <section class="tile" title="Division" id="division_section" style="display:none">
+            <h1 class="lg">24 / 4 =
+                <!-- See http://www.menucool.com/tooltip/css-tooltip -->
+                <div id="division_tile" answer="6" style="border-bottom: 0" class="btn btn-primary tooltip">?
+                    <div class="top">
+                        <h3 id="divTileAnswer">Click to see the answer!</h3><i></i>
+                    </div>
+                </div>
+            </h1>
+        </section>
+        <section class="tile" title="Modulus" id="modulus_section" style="display:none">
+            <h1 class="lg">13 % 4 =
+                <!-- See http://www.menucool.com/tooltip/css-tooltip -->
+                <div id="modulus_tile" answer="1" style="border-bottom: 0" class="btn btn-primary tooltip">?
+                    <div class="top">
+                        <h3 id="modTileAnswer">Click to see the answer!</h3><i></i>
+                    </div>
+                </div>
+            </h1>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="module" src="./modules/basicmath.js"></script>
+   </body>
+</html>
