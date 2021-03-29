@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News</title>
+  </head>
+  <script type="module" src="./modules/news.js"></script>
+  <body>
+    <h1>Today's News Stories</h1>
+    <article>
+        <h3 id="caption"></h3>
+        <h5 id="author"></h5>
+        <details>
+            <summary>Details</summary>
+            <h4 id="source"></h4>
+            <h4 id="released"></h4>
+            <a id="url"></a>
+        </details>
+        <p id="story"></p>
+    </article>
+
+    <form onsubmit="checkAuthor()">
+        <label>Search articles by author: </label>
+        <input id="author" type="text">
+        <input type="submit" value="Submit"/>
+    </form>
+
+    <form onsubmit="checkDate()">
+        <label>Search articles by date: </label>
+        <input id="searchdate" type="date">
+        <input type="submit" value="Submit" />
+    </form>
+
+    <form onsubmit="checkKeyword()">
+        <label>Search articles by keyword: </label>
+        <input id="keyword" type="text">
+        <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
