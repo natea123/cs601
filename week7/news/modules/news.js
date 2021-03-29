@@ -25,29 +25,71 @@ var json = [
       }
     ];
 
-json.forEach(function(obj) {
+window.addEventListener("DOMContentLoaded", event => {
 
-    var d = new Date(obj.released);
-    var today = new Date();
-    if (d.getDate() == today.getDate()) {
-        document.getElementById("caption").innerHTML = obj.caption;
-        document.getElementById("source").innerHTML = obj.source;
-        document.getElementById("url").innerHTML = obj.url;
-        document.getElementById("url").href = obj.url;
-        document.getElementById("author").innerHTML = obj.author;
-        document.getElementById("released").innerHTML = obj.released;
-        document.getElementById("story").innerHTML = obj.story;
-    }
+    json.forEach(function(obj) {
+
+        var d = new Date(obj.released);
+        var today = new Date();
+        if (d.getUTCDate() == today.getUTCDate() && d.getUTCFullYear() == today.getUTCFullYear()) {
+            document.getElementById("caption").innerHTML = obj.caption;
+            document.getElementById("source").innerHTML = obj.source;
+            document.getElementById("url").innerHTML = obj.url;
+            document.getElementById("url").href = obj.url;
+            document.getElementById("author").innerHTML += obj.author;
+            document.getElementById("released").innerHTML = obj.released;
+            document.getElementById("story").innerHTML = obj.story;
+        }
+    });    
 });
 
-function checkAuthor() {
- //TODO: write function to display articles from given author
-    var searchAuthor = document.getElementById('author').value;
-    console.log(searchAuthor)
+//event handler for author search
+document.getElementById("searchauthor").addEventListener("submit", function(event) {
+    event.preventDefault()
+    var searchAuthor = document.getElementById("searchedauthor").value;
 
     json.forEach(function(obj) {
 
         if (obj.author == searchAuthor) {
+            document.getElementById("caption").innerHTML = obj.caption;
+            document.getElementById("source").innerHTML = obj.source;
+            document.getElementById("url").innerHTML = obj.url;
+            document.getElementById("url").href = obj.url;
+            document.getElementById("author").innerHTML = obj.author;
+            document.getElementById("released").innerHTML = obj.released;
+            document.getElementById("story").innerHTML = obj.story;
+        }
+    });
+});
+
+//event handler for date search
+document.getElementById("searchdate").addEventListener("submit", function(event) {
+    event.preventDefault()
+    var searchDate = new Date(document.getElementById("searcheddate").value);
+
+    json.forEach(function(obj) {
+        var d = new Date(obj.released);
+        
+        if (d.getUTCDate() == searchDate.getUTCDate() && d.getUTCFullYear() == searchDate.getUTCFullYear())  {
+            document.getElementById("caption").innerHTML = obj.caption;
+            document.getElementById("source").innerHTML = obj.source;
+            document.getElementById("url").innerHTML = obj.url;
+            document.getElementById("url").href = obj.url;
+            document.getElementById("author").innerHTML = obj.author;
+            document.getElementById("released").innerHTML = obj.released;
+            document.getElementById("story").innerHTML = obj.story;
+        }
+    });
+});
+
+//event handler for keyword search
+document.getElementById("searchkeyword").addEventListener("submit", function(event) {
+    event.preventDefault()
+    var keyword = document.getElementById("searchedkeyword").value;
+
+    json.forEach(function(obj) {
+
+        if (obj.story.includes(keyword)) {
             console.log("found")
             document.getElementById("caption").innerHTML = obj.caption;
             document.getElementById("source").innerHTML = obj.source;
@@ -58,16 +100,4 @@ function checkAuthor() {
             document.getElementById("story").innerHTML = obj.story;
         }
     });
-};
-
-function checkDate() {
-    //TODO: write function to display articles from given date
-    var searchDate = document.getElementById('searchdate').value;
-};
-
-function checkKeyword() {
-    //TODO: write function to display articles from given keyword
-    var searchKeyword = document.getElementById('keyword').value;
-};
-   
-document.getElementById("author").addEventListener("submit", checkAuthor());
+});
