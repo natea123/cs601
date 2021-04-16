@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+  </head>
+  <script>
+    fetch("http://beermapping.com/webservice/locquery/d9f50347122d256ead5ac1f4d1b7752c/1042")
+        .then(response=>{
+        return response.json()
+        }).then(data=>{
+          document.querySelector("#data").innerHTML = data;
+        });
+  </script>
+  <body>
+    <h1 id="data"></h1>
+  </body>
+</html>

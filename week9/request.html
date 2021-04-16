@@ -1,0 +1,43 @@
+<!--
+In this exercise, you will use the Request Method::GET to retrieve the data from the URL (shown below).
+Show all the data it has on your page.
+The URL to use is  http://bit.ly/35oNmAx
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+  </head>
+  <style>
+    body {
+      background-color: peachpuff;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      font-size: 70px;
+      margin: -30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id=data></h1>
+  <script>
+    fetch("http://zumatra.com/teach/colors.php", { method: 'GET' })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        document.querySelector("#data").innerHTML = myJson;
+      })
+      .catch(function (error) {
+        console.log("Error: " + error);
+      });
+  </script>
+</body>
+</html>
