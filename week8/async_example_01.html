@@ -1,0 +1,23 @@
+<!--
+    Take the attached code and change the alert() call to have the output 
+    write to a div you will create in the page when the user presses a button.
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <title>Example using async </title>
+        <meta charset="utf-9"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button id="bar" value="button">Press me!</button>
+        <div id="foo"></div>
+    </body>
+    <script>
+        document.getElementById("bar").addEventListener('click', async function() { 
+            let value = await 1
+            document.getElementById("foo").innerHTML = value;
+         })
+    </script>
+</html>
