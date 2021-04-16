@@ -6,7 +6,7 @@
     <title>Welcome</title>
   </head>
   <script>
-    fetch("http://beermapping.com/webservice/locquery/d9f50347122d256ead5ac1f4d1b7752c/1042")
+    fetch("http://beermapping.com/webservice/locquery/${APIKEY}/1042")
         .then(response=>{
         return response.json()
         }).then(data=>{
